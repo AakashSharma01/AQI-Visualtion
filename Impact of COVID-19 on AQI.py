@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[81]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -16,39 +13,15 @@ import matplotlib.ticker as ticker
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[82]:
+Delhi = pd.read_csv(r'Delhi AQI 2020.csv')
 
 
-os.getcwd()
-
-
-# In[83]:
-
-
-os.chdir('C:\\Users\\asus\\Desktop\\Online Courses\\Applied Machine Learning Using Python Univ of Michigan\\Course 2_Plotting & Charting\\Assignment 4')
-
-
-# In[84]:
-
-
-Delhi = pd.read_csv(r'C:\Users\asus\Desktop\Online Courses\Applied Machine Learning Using Python Univ of Michigan\Course 2_Plotting & Charting\Assignment 4\Delhi AQI 2020.csv')
-
-
-# In[86]:
-
-
-AnnArbor = pd.read_csv(r'C:\Users\asus\Desktop\Online Courses\Applied Machine Learning Using Python Univ of Michigan\Course 2_Plotting & Charting\Assignment 4\ad_aqi_tracker_data.csv')
-
-
-# In[87]:
+AnnArbor = pd.read_csv(r'ad_aqi_tracker_data.csv')
 
 
 Delhi['Date'] = pd.to_datetime(Delhi['Date'], format = '%m/%d/%Y')
 AnnArbor['Date'] = pd.to_datetime(AnnArbor['Date'], format = '%m/%d/%Y')
 AnnArbor.head()
-
-
-# In[88]:
 
 
 # Create figure and plot space
@@ -73,9 +46,6 @@ ax.xaxis.set_major_formatter(date_form)
 ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
 _=plt.xticks(rotation=90)  
 plt.show()
-
-
-# In[ ]:
 
 
 
